@@ -1,0 +1,76 @@
+#include <stdio.h>
+#include<math.h>
+int main()
+{ float x1,x2,px,a,b,c;
+float x,F;
+int n;
+printf("input x1: ");
+scanf("%f", &x1);
+printf("input x2: ");
+scanf("%f", &x2);
+printf("input px: ");
+scanf("%f", &px);
+printf("input a: ");
+scanf("%f", &a);
+printf("input b: ");
+scanf("%f", &b);
+printf("input c: ");
+scanf("%f", &c);
+x=x1;
+n=0;
+printf("\n\t Results : \n");
+while(x<=x2)
+{ n=n+1;
+ if ((b-a<0) && (c==0))
+ {
+ F=((1+x)/(x-cos(c))-b/a);
+ }
+ else if ((b-a)>0 && (c !=0))
+ F=(a-b*x)/ log(x);
+ else
+ { F=((10*x+2)/(c*c*x-6-b));
+ }
+ printf("%d: x=%.3f \t F= %.3f \n", n, x,F);
+ x=x+px;}
+ x=x1;printf("\n");
+ do
+{ n=n+1;
+ if ((b-a<0) && (c==0))
+ {F=((1+x)/(x-cos(c))-b/a);
+ }
+ else if ((b-a)>0 &&  (c !=0))
+ F=(a-b*x)/ log(x);
+ else
+ { F=((10*x+2)/(c*c*x-6-b));
+ }
+ printf("%d: x=%.3f \t F= %.3f \n", n, x,F);
+ x=x+px;
+}
+while(x<=(x2));
+ x=x1;printf("\n");
+for(x=x1;x<=(x2); x=x+px)
+{ n=n+1;
+ if ((b-a<0) && (c==0))
+ {F=((1+x)/(x-cos(c))-b/a);
+ }
+ else if ((b-a)>0 && (c !=0))
+ F=(a-b*x)/ log(x);
+ else
+ { F=((10*x+2)/(c*c*x-6-b));
+ }
+ printf("%d: x=%.3f \t F= %.3f \n", n, x,F);
+ }
+ x=x1;
+program:
+{ if ((b-a<0) && (c==0))
+ { F=((1+x)/(x-cos(c))-b/a);
+ }
+ else if ((b-a)>0 && (c !=0))
+ F=(a-b*x)/ log(x);
+ else
+ { F=((10*x+2)/(c*c*x-6-b));
+ }
+ printf("x=%.3f \t F= %.3f \n", x,F);
+ x=x+px;}
+if (x<=x2) goto program;
+return 0;}
